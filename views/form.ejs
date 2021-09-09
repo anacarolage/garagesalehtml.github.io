@@ -1,0 +1,136 @@
+<!--  PROG1800 – Programming Dynamic Websites
+    Assignment 03
+    Professor: Dr Rohini Arora
+    Student name: Ana Carolina Lage Muniz de Souza Campos
+    Student number: 8709968 
+    Revision History: Ana Carolina Lage, 2021.07.30, Created-->
+
+<%- include('layouts/header'); -%>
+<body>
+  <section id="display">
+    <!-- All images from Getty Images and Shelter Mover (https://www.sheltermovers.com/)-->
+    <input type="image" src="/images/moose.png" alt="Brown moose stuffed animal" width="120" height="120">
+    <h3>Moose<br>
+        $<span id="moosev">12</span></h3>
+    <p>Silly Pawz Moose Plush Brown Stuffed Animal 12" </p>
+    <input type="button" id="btnAddCardItem01" value="Add to Cart" onclick="addCart('moose')" />
+    <h4><span id="moose"></span><span id="mooseq"></span></h4>
+</section>
+
+<section id="display">
+    <input type="image" src="/images/mug.png" alt="Navy mug" width="120" height="120">
+    <h3>Mug<br>
+        $<span id="mugv">15</span></h3>
+    <p>Stoneware Best Dad Navy Mug 16oz</p>
+    <input type="button" id="btnAddCardItem02" value="Add to Cart" onclick="addCart('mug')" /><br>
+    <h4><span id="mug"></span><span id="mugq"></span></h4>
+</section>
+
+<section id="display">
+    <input type="image" src="/images/blender.png" alt="Black blender" width="90" height="120">
+    <h3>Blender<br>
+        $<span id="blenderv">25</span></h3>
+    <p>Oster Black Blender 200 700 watts 10 speeds</p>
+    <input type="button" id="btnAddCardItem03" value="Add to Cart" onclick="addCart('blender')" /><br>
+    <h4><span id="blender"></span><span id="blenderq"></span></h4>
+</section>
+
+<section id="display">
+    <input type="image" src="/images/bike.png" alt="Blue bike" width="120" height="120">
+    <h3>Bike<br>
+        $<span id="bikev">30</span></h3>
+    <p>Disney Frozen Kids Blue Bike 16"</p>
+    <input type="button" id="btnAddCardItem04" value="Add to Cart" onclick="addCart('bike')" /><br>
+    <h4><span id="bike"></span><span id="bikeq"></span></h4>
+</section>
+
+
+  <section class="formw">
+    <form name="myform" method="Post" action="" >
+      <label for="lblQuantityItems">Quantity: </label>
+      <input id="quantity" type="number" name="quantity" min=0 oninput="validity.valid||(value='');"><br>
+      <br>
+
+      <label for="lblName">Name: </label>
+      <input id="name" placeholder="First Last" type="text" name="name" value=""><br>
+      <label for="lblEmail">E-mail: </label>
+      <input id="email" placeholder="name@email.com" type="text" name="email" value=""><br>
+      <label for="lblCreditCard">Credit Card: </label>
+      <input id="creditCard" placeholder="xxxx-xxxx-xxxx-xxxx"type="text" name="creditCard" value=""><br>
+      <label for="lblCreditCardExpMonth">Expiration Date: </label>
+      <input id="creditCardExpMonth" type="month" name="creditCardExpMonth" value=""><br>
+
+      <br/><br/>
+
+      <input type="hidden" name="totalItens" value="0">
+      <input type="hidden" name="totalValue" value="0">
+
+      <input type="submit" value="Checkout">
+      <p id="errors"></p>
+    </form>  
+</section>
+<section class="formw">
+  <div class="formData">
+    <%
+      if(typeof(errors) != 'undefined'){
+        for(var error of errors){
+        %>
+          <p class="errors"><%= error.msg %></p>
+        <%
+        }
+      }
+    %>
+    <%
+      if(typeof(total) != 'undefined'){
+        %>
+        <p id="formResult">Your Receipt:</p>
+        <table>
+          <tr>
+            <th>Name: </th>
+            <td><%= name %></td>
+          </tr>
+          <tr>
+            <th>Email: </th>
+            <td><%= email %></td>
+          </tr>
+          <tr>
+            <th>Credit Card: </th>
+            <td><%= customerCreditCardEncryped %></td>
+          </tr>
+          <tr>
+            <th>Expire Date: </th>
+            <td><%= creditCardExpMonth %></td>
+          </tr>
+          <tr>
+            <th>Total Items: </th>
+            <td><%= totalItens %></td>
+          </tr>
+            <th>Subtotal: </th>
+            <td>$<%= totalValue.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <th>Tax: </th>
+            <td>$<%= tax.toFixed(2) %></td>
+          </tr>
+          <tr>
+            <th>Total: </th>
+            <td>$<%= total.toFixed(2) %></td>
+          </tr>
+        </table>
+        <%
+      }
+    %>
+    
+  </div>
+</section>
+<div class="clear"></div>
+</body>
+<%- include('layouts/footer'); -%>
+
+
+
+
+
+
+
+

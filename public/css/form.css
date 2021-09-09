@@ -1,0 +1,113 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#f5f5ef;
+    font-size: 20px;
+    width: 960px;
+    margin: 50px auto;
+}
+header{
+    background-color: #f5f5ef;
+    float: center;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding-bottom: 40px;
+}
+.formw{
+    width: 48%;
+    float: left;
+    margin: 1%;
+}
+.clear{
+    clear: both;
+}
+#errors{
+    color: white;
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+
+}
+form, .formData{
+    width: 380px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #2c2c2c;
+    padding: 30px;
+    margin: 50px auto;
+    color: white;
+    background-color: #0781b2;
+    border-radius: 20px;
+    font-size: medium;
+}
+label{
+    width: 170px;
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+}
+select{
+    width: 190px;
+    margin-top: 10px;
+}
+input[type="submit"]{
+    width: 100%;
+    font-size: 22px;
+    background-color: #c26f54;
+    color: white;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 4px 4px 0px #626261;
+    border-radius: 8px;
+}
+input[type="submit"]:active{
+    box-shadow: -4px -4px 0px #c26f54;
+}
+#display{
+    background-color: white;
+    border: #c26f54 solid;
+    border-radius: 20px;
+    float: left;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    width: 150px;
+    height: 320px;
+    font-size: medium;
+}
+h1{
+    color: #004aad;
+    font-size: 200%;
+    text-align: center;
+}
+h2{
+    color: #004aad;
+    font-size: 150%;
+    text-align: center;
+}
+h3{
+    color: #004aad;
+}
+h4{
+    color: #004aad;
+    font-size: 80%;
+    text-align: left;
+}
+footer{
+    padding: 0px;
+    margin-top: 500px;
+    text-align: center;
+    float: center; 
+    height: 50px; 
+    border-top: #004aad solid;
+    border-width: 2px;
+}
+footer p{
+    color: #004aad;
+    text-align: center;
+    font-size: small;
+}
